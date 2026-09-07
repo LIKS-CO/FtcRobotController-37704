@@ -12,6 +12,6 @@ class Chasis: Mechanism {
     val backRight = NextMotor("RB")
 
     fun startDrive(gamepad: Gamepad) {
-        mecanumDrive(frontLeft, frontRight, backLeft, backRight, gamepad)
+        mecanumDrive(frontLeft, frontRight, backLeft, backRight, gamepad).schedule()
     }
 }
