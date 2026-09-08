@@ -5,7 +5,6 @@ import dev.nextftc.hardware.actuators.NextMotor
 import dev.nextftc.robot.Mechanism
 import dev.nextftc.robot.drive.mecanumDrive
 
-//TODO: Test this mechanism
 class Chasis: Mechanism {
     val frontLeft = NextMotor("LF")
     val frontRight = NextMotor("RF")
@@ -13,6 +12,6 @@ class Chasis: Mechanism {
     val backRight = NextMotor("RB")
 
     fun startDrive(gamepad: Gamepad) {
-        mecanumDrive(frontLeft, frontRight, backLeft, backRight, gamepad).schedule()
+        mecanumDrive(frontLeft = frontLeft, frontRight = frontRight, backLeft = backLeft, backRight = backRight, gamepad = gamepad).schedule()
     }
 }
