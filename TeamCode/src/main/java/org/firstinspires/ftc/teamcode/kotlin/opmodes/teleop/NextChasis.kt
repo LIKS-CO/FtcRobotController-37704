@@ -9,6 +9,7 @@ import org.firstinspires.ftc.teamcode.kotlin.Robot
 class NextChasis(val robot: Robot): NextOpMode(robot) {
     override fun start() {
         Telemetry.log("Started with nextftc")
+        //TODO: Test this code
         robot.chasis.startDrive(gamepad1)
         Telemetry.log("Started chasis")
     }
