@@ -7,9 +7,9 @@ import dev.nextftc.robot.drive.mecanumDrive
 
 class Chasis: Mechanism {
     val frontLeft = NextMotor("LF")
-    val frontRight = NextMotor("RF")
+    val frontRight = NextMotor("RF").apply { direction = NextMotor.Direction.REVERSE }
     val backLeft = NextMotor("LB")
-    val backRight = NextMotor("RB")
+    val backRight = NextMotor("RB").apply { direction = NextMotor.Direction.REVERSE }
 
     fun startDrive(gamepad: Gamepad) {
         mecanumDrive(frontLeft = frontLeft, frontRight = frontRight, backLeft = backLeft, backRight = backRight, gamepad = gamepad).schedule()
