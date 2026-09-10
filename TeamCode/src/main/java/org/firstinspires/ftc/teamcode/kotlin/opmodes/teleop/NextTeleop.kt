@@ -16,7 +16,6 @@ class NextTeleop(val robot: Robot): NextOpMode(robot) {
     }
 
     override fun periodic() {
-        val intakeInput = coDriver.rightStickY.value
-        robot.intake.run(intakeInput)
+        robot.intake.setPower(coDriver.rightStickY.value)
     }
 }

@@ -4,7 +4,9 @@ import dev.nextftc.hardware.actuators.NextMotor
 import dev.nextftc.robot.Mechanism
 
 class Intake : Mechanism {
-    val motor = NextMotor("intake")
+    val motor = NextMotor("intake").apply { direction = NextMotor.Direction.REVERSE }
 
-    fun run(input: Double) = instant { motor.throttle = input }
+    fun setPower(power: Double) {
+        motor.throttle = power
+    }
 }
